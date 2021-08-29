@@ -1,0 +1,47 @@
+<div class="modal-header">
+  <h5 class="modal-title">Bonus Amount</h5>
+  <button type="button" class="close" data-dismiss="modal" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row"  *ngIf="bonusResult">
+  
+    <div class="col-md-6">
+     <div> <label>Employee Name : <b>{{bonusResult.employee.fullname}}</b></label>             </div>
+     <div> <label>Job Title : <b>{{bonusResult.employee.jobTitle}}</b></label>                 </div>
+     <div> <label>Salary : <b>{{bonusResult.employee.salary}}</b></label>                      </div>
+     <div> <label>Department Name : <b>{{bonusResult.employee.department.title}}</b></label>   </div>
+     <div> <label>Description: <b>{{bonusResult.employee.department.description}}</b></label>  </div>
+    </div>
+    <div class="col-md-6">
+      <label for="exampleInputPassword1">Bonus Amount : <b>{{bonusResult.amount}}</b></label>
+    </div>
+
+  </div>
+  <form  *ngIf="!bonusResult">
+    <div class="form-group">
+
+      <label for="exampleInputPassword1">Employee Id : <b>{{fromParent.id}}</b></label>
+
+
+    </div>
+
+    <!--<input type="text class="form-control" [(ngModel)]="fromParent.fullname" >-->
+
+<div class="form-group">
+  <label for="exampleInputEmail1">Employee Name : <b>{{fromParent.fullname}}</b></label>
+  <!--<input type="text" class="form-control" [(ngModel)]="fromParent.id" >-->
+</div>
+<div class="form-group">
+  <label for="exampleInputPassword1">Enter Bonus Pool Amount</label>
+  <input type="number" name="poolAmount" class="form-control" [(ngModel)]="bonusDto.TotalBonusPoolAmount">
+</div>
+
+<button class="btn btn-warning m-1" (click)="CalculateBonusAmount()">Calculate</button>
+  </form>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close</button>
+</div>
