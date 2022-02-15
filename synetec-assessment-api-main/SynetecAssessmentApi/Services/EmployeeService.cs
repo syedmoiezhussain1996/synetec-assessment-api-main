@@ -13,7 +13,8 @@ namespace SynetecAssessmentApi.Services
 
         private readonly AppDbContext _dbContext;
         private readonly IMapper _mapper;
-        public EmployeeService(
+
+		public EmployeeService(
             AppDbContext dbContext,
             IMapper mapper)
         {

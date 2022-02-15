@@ -17,6 +17,7 @@ namespace SynetecAssessmentApi.Controllers
         {
             try
             {
+                var a = await _employeeService.GetEmployeesAsync();
                 return Ok(await _employeeService.GetEmployeesAsync());
             }
             catch
